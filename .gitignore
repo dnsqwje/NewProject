@@ -1,0 +1,16 @@
+
+.idea/
+*.iml
+**/target/
+**/node_modules/
+**/dist/
+**/data/
+**/application-local.properties
+**/application-mysql-local.properties
+.env
+.env.*
+!.env.example
+db-backup-*/
+*.zip
+*.sql.gz
+routineslim_web-*.sql

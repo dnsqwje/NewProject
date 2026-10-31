@@ -29,3 +29,13 @@ CREATE TABLE IF NOT EXISTS account_restrictions (
  session_revision INT NOT NULL DEFAULT 0,
  FOREIGN KEY (user_id) REFERENCES app_users(id) ON DELETE CASCADE
 );
+
+-- 서비스 빠른 선택 목록
+CREATE TABLE IF NOT EXISTS service_catalog (
+                                               name VARCHAR(120) PRIMARY KEY,
+                                               category VARCHAR(120) NOT NULL,
+                                               icon VARCHAR(32) NOT NULL,
+                                               background CHAR(7) NOT NULL,
+                                               active BOOLEAN NOT NULL DEFAULT TRUE,
+                                               sort_order INT NOT NULL DEFAULT 0
+);
