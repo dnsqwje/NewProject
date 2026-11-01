@@ -39,3 +39,12 @@ CREATE TABLE IF NOT EXISTS service_catalog (
                                                active BOOLEAN NOT NULL DEFAULT TRUE,
                                                sort_order INT NOT NULL DEFAULT 0
 );
+
+-- 회원별 게시글 임시저장
+CREATE TABLE IF NOT EXISTS community_drafts (
+                                                user_id VARCHAR(120) PRIMARY KEY,
+                                                json_value CLOB NOT NULL,
+                                                updated_at TIMESTAMP NOT NULL,
+                                                FOREIGN KEY (user_id)
+                                                    REFERENCES app_users(id) ON DELETE CASCADE
+);
